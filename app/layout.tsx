@@ -1,7 +1,8 @@
-import { ClerkProvider } from "@clerk/nextjs";
 import React from "react";
+import { ClerkProvider } from "@clerk/nextjs";
 import { Inter, Space_Grotesk } from "next/font/google";
-import { Metadata } from "next";
+import type { Metadata } from "next";
+
 import "./globals.css";
 import { ThemeProvider } from "@/context/ThemeProvider";
 
@@ -14,13 +15,13 @@ const inter = Inter({
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-spaaceGrotesk",
+  variable: "--font-spaceGrotesk",
 });
 
 export const metadata: Metadata = {
   title: "DevFlow",
   description:
-    "A community driven platform for asking and answering programming questions.",
+    "A community-driven platform for asking and answering programming questions. Get help, share knowledge, and collaborate with developers from around the world. Explore topics in web development, mobile app development, algorithms, data structures, and more.",
   icons: {
     icon: "/assets/images/site-logo.svg",
   },
@@ -34,8 +35,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${spaceGrotesk.variable}`}>
-        <h1 className="h1-bold">The is a tweext</h1>
-
         <ClerkProvider
           appearance={{
             elements: {
